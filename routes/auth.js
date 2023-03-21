@@ -6,7 +6,7 @@ const bcrypt=require("bcryptjs");
 
 
 
-router.post("/register",async(req,res)=>{
+router.post("/signup",async(req,res)=>{
 
    try{
       const salt=await bcrypt.genSalt(8);
@@ -49,7 +49,7 @@ router.post("/login",async(req,res)=>{
    }
    catch(err)
    {
-     res.status(500).json("Error Found");
+     res.status(500).json(err);
 
    }
  })

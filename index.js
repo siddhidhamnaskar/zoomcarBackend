@@ -6,25 +6,29 @@ const connection=require('./config/db')
  const userroute=require("./routes/User")
  const productroute=require("./routes/products")
 const app=express();
+const cors =require("cors");
 mongoose.set('strictQuery', true);
 app.use(express.json());
 
 
 
-app.use('/auth',authroute);
+app.use('/',authroute);
 app.use("/user",userroute);
-app.use("/products",productroute);
+app.use("/BookingCars",productroute);
 
 
-const PORT=3035;
+const PORT=3036;
+
 app.listen(PORT,()=>{
     try{
         connection();
-       console.log("http://localhost:3035");
+       console.log("http://localhost:3036");
+
 
 
     }
     catch(err){
+
      console.log("error found");
 
     }
