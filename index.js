@@ -16,12 +16,12 @@ app.use('/',authroute);
 app.use("/user",userroute);
 app.use("/BookingCars",productroute);
 
-const PORT=3000;
+const PORT=3036;
 
 app.listen(PORT,()=>{
     try{
         connection();
-       console.log("http://localhost:3000");
+       console.log("http://localhost:3036");
 
 
 
