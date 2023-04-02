@@ -1,9 +1,25 @@
 const express=require("express")
 const router=express.Router();
-
+const Product=require("../models/product");
 const User=require("../models/user.js");
 const bcrypt=require("bcryptjs");
 
+
+
+
+router.get("/",async(req,res)=>{
+  try{
+       
+    const product=await Product.find();
+    res.status(200).json("Products:");
+  
+
+}
+catch(err)
+{
+    res.status(500).json(err);
+   }
+})
 
 
 router.post("/signup",async(req,res)=>{
